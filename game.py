@@ -10,9 +10,9 @@ def main():
     screen = pygame.display.set_mode((1440,900))
 
     running = True
-    bottom = Ground(pygame.image.load("ground2.png"), (0, ground_y), ground_start_speed)
+    bottom = Ground(pygame.image.load(ground_path), (0, ground_y), ground_start_speed)
     #sky = BackGround(pygame.image.load("mountains2.png"), pygame.image.load("sky.jpg"))
-    boi = BOI(pygame.image.load("ranchGuy_small.png"), (0,boi_start_y), boi_start_speed, bottom)
+    boi = BOI(pygame.image.load(player_path), (0,boi_start_y), boi_start_speed, bottom)
     score = Score(None, score_pos, 0, bottom)
     objs = [boi, bottom, score]
 

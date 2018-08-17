@@ -9,3 +9,8 @@ boi_m = 1
 
 score_pos = (500, 100)
 score_font_size = 30
+
+#Asset file paths
+ground_path = "assets/ground2.png"
+player_path = "assets/ranchGuy_small.png"
+enemy1_path = "assets/ramadanSteve_small.png"
