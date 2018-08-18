@@ -6,6 +6,7 @@ from GC import *
 from EnemyFactory import EnemyFactory
 from background import BackGround
 
+
 def main():
     pygame.init()
     screen = pygame.display.set_mode((1440,900))
@@ -16,7 +17,6 @@ def main():
     boi = BOI(player_path, (0,boi_start_y), boi_start_speed, bottom)
     enemy_fact = EnemyFactory(ef_path, ef_init_pos, None, bottom, screen)
     score = Score(None, score_pos, 0, bottom)
-    #objs = [boi, bottom, score]
     objs = [boi, bottom, score, enemy_fact]
 
     while running:
@@ -39,6 +39,10 @@ def main():
             screen.blit(obj.img, obj.pos)
 
         pygame.display.update()
+
+        for enemy in enemy_fact.enemies:
+            if boi.rect.collidepoint(enemy.rect.center):
+                print("collide")
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:

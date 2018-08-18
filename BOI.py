@@ -1,6 +1,7 @@
 from GameObject import GameObject
 from GC import *
 
+
 class BOI(GameObject):
 
     is_jump = 0

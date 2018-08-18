@@ -4,6 +4,7 @@ from Enemy import Enemy
 import pygame as pygame
 from GC import *
 
+
 class EnemyFactory(GameObject):
 
     def __init__(self, image, coords, speed, ground, screen):

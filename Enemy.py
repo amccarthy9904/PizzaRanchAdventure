@@ -1,5 +1,6 @@
 from GameObject import GameObject
 
+
 class Enemy(GameObject):
 
     def __init__(self, image, coords, speed):

@@ -2,6 +2,7 @@ from GameObject import GameObject
 from timeit import default_timer as timer
 from GC import *
 
+
 class Ground(GameObject):
 
     def __init__(self, image, coords, speed):

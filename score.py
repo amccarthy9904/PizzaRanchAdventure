@@ -2,6 +2,7 @@ from GameObject import GameObject
 import pygame as pygame
 from GC import *
 
+
 class Score(GameObject):
 
     def __init__(self, image, coords, speed, ground):
@@ -9,7 +10,6 @@ class Score(GameObject):
         self.points = 0
         self.ground = ground
         self.font = pygame.font.Font(pygame.font.match_font("impact"), score_font_size)
-
 
     def update(self):
         self.points -= self.ground.speed * .1
