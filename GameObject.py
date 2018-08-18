@@ -1,8 +1,9 @@
+import pygame
 class GameObject:
 
     def __init__(self, image, coords, speed):
-
-        self.img = image
+        if image is not None:
+            self.img = pygame.image.load(image)
         self.pos = coords
         self.speed = speed
 
