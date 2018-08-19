@@ -9,9 +9,8 @@ class BOI(GameObject):
     v = boi_v
     m = boi_m
 
-    def __init__(self, image, coords, speed, ground):
+    def __init__(self, image, coords, speed):
         GameObject.__init__(self, image, coords, speed)
-        self.ground = ground
 
     def die(self):
         pass

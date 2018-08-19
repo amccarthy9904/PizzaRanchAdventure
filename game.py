@@ -14,7 +14,7 @@ def main():
     running = True
     bottom = Ground(ground_path, (0, ground_y), ground_start_speed)
     #sky = BackGround(pygame.image.load("mountains2.png"), pygame.image.load("sky.jpg"))
-    boi = BOI(player_path, (0,boi_start_y), boi_start_speed, bottom)
+    boi = BOI(player_path, (0,boi_start_y), boi_start_speed)
     enemy_fact = EnemyFactory(ef_path, ef_init_pos, None, bottom, screen)
     score = Score(None, score_pos, 0, bottom)
     objs = [boi, bottom, score, enemy_fact]
@@ -41,7 +41,7 @@ def main():
         pygame.display.update()
 
         for enemy in enemy_fact.enemies:
-            if boi.rect.collidepoint(enemy.rect.center):
+            if enemy.rect.collidepoint(boi.rect.center):
                 print("collide")
 
         for event in pygame.event.get():

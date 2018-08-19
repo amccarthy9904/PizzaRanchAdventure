@@ -15,23 +15,24 @@ class EnemyFactory(GameObject):
         self.cooldown = 500
 
     def make_enemy(self):
-        choice = random.randint(1,101)
-        if choice <= 60:
-            self.enemies.append(Enemy(enemy_RS_path, (e1_init_x, e_RS_init_y), self.ground.speed))
-            pass
-        if choice <=85:
-            self.enemies.append(Enemy(enemy_RS_path, (e1_init_x, e_RS_init_y), self.ground.speed))
-            self.enemies.append(Enemy(enemy_RS_path, (e2_init_x, e_RS_init_y), self.ground.speed))
-            pass
-        else:
-            self.enemies.append(Enemy(enemy_RS_path, (e1_init_x, e_RS_init_y), self.ground.speed))
-            self.enemies.append(Enemy(enemy_RS_path, (e2_init_x, e_RS_init_y), self.ground.speed))
-            self.enemies.append(Enemy(enemy_RS_path, (e3_init_x, e_RS_init_y), self.ground.speed))
-            pass
+        #choice = random.randint(1,101)
+        #if choice <= 60:
+        #    self.enemies.append(Enemy(enemy_RS_path, (e1_init_x, e_RS_init_y), self.ground.speed))
+        #    pass
+        #if choice <=85:
+        #    self.enemies.append(Enemy(enemy_RS_path, (e1_init_x, e_RS_init_y), self.ground.speed))
+        #    self.enemies.append(Enemy(enemy_RS_path, (e2_init_x, e_RS_init_y), self.ground.speed))
+        #    pass
+        #else:
+        #    self.enemies.append(Enemy(enemy_RS_path, (e1_init_x, e_RS_init_y), self.ground.speed))
+        #    self.enemies.append(Enemy(enemy_RS_path, (e2_init_x, e_RS_init_y), self.ground.speed))
+        #    self.enemies.append(Enemy(enemy_RS_path, (e3_init_x, e_RS_init_y), self.ground.speed))
+        #    pass
+        self.enemies.append(Enemy(enemy_RS_path, (e1_init_x, e_RS_init_y), self.ground.speed))
 
     def update(self):
         self.cooldown -= 1
-        if self.cooldown <= 0 and random.randint(1,51) > 49:
+        if self.cooldown <= 0:
             self.make_enemy()
             self.cooldown = 500
 

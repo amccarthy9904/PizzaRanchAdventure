@@ -1,5 +1,5 @@
 ground_y = 750
-ground_start_speed = -6
+ground_start_speed = -2
 ground_len = 4177
 
 boi_start_y = ground_y - 80
