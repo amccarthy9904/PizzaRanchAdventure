@@ -1,5 +1,6 @@
 from GameObject import GameObject
 from GC import *
+from pygame import *
 
 
 class BOI(GameObject):
@@ -16,6 +17,8 @@ class BOI(GameObject):
         pass
 
     def update(self):
+        self.rect = self.img.get_rect(topleft=self.pos)
+
         if self.is_jump:
             if self.v > 0:
                 F = (.3 * self.m * (self.v*self.v))
@@ -44,5 +47,6 @@ class BOI(GameObject):
 
     def fall(self):
         self.is_fall = 1
+
 
 

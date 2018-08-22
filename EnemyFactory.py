@@ -12,7 +12,7 @@ class EnemyFactory(GameObject):
         self.ground = ground
         self.screen = screen
         self.enemies = []
-        self.cooldown = 500
+        self.cooldown = 10
 
     def make_enemy(self):
         #choice = random.randint(1,101)
@@ -34,7 +34,7 @@ class EnemyFactory(GameObject):
         self.cooldown -= 1
         if self.cooldown <= 0:
             self.make_enemy()
-            self.cooldown = 500
+            self.cooldown = ef_cooldown
 
         for enemy in self.enemies:
             enemy.update()

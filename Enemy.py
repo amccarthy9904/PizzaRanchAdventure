@@ -8,3 +8,4 @@ class Enemy(GameObject):
 
     def update(self):
         self.pos = (self.pos[0] + self.speed, self.pos[1])
+        self.rect = self.img.get_rect(topleft=self.pos)
