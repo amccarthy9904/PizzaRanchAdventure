@@ -7,12 +7,16 @@ boi_start_speed = 3
 boi_v = 12
 boi_m = 1
 
-ef_init_pos = (-100, -100)
+fact_init_pos = (-100, -100)
+
+pf_cooldown = 100
+
 ef_cooldown = 500
 
 e_RS_init_y = ground_y - 96
+e_PU_init_y = ground_y - 79
 e1_init_x = 1700
-e2_init_x = 1800
+e2_init_x = 1775
 e3_init_x = 1900
 
 
@@ -30,3 +34,4 @@ ground_path = "assets/ground2.png"
 player_path = "assets/ranchGuy_small.png"
 enemy_RS_path = "assets/ramadanSteve_small.png"
 ef_path = "assets/ef.png"
+p_up_path = "assets/health_sm.png"

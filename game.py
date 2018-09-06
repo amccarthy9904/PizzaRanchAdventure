@@ -3,7 +3,7 @@ from BOI import BOI
 from ground import Ground
 from Score import Score
 from GC import *
-from EnemyFactory import EnemyFactory
+from EntityFactory import EntityFactory
 from Text import Text
 from background import BackGround
 
@@ -14,13 +14,13 @@ screen = pygame.display.set_mode((display_width,display_height))
 bottom = Ground(ground_path, (0, ground_y), ground_start_speed)
 #sky = BackGround(pygame.image.load("mountains2.png"), pygame.image.load("sky.jpg"))
 boi = BOI(player_path, (0,boi_start_y), boi_start_speed)
-enemy_fact = EnemyFactory(ef_path, ef_init_pos, None, bottom, screen)
+entity_fact = EntityFactory(ef_path, fact_init_pos, None, bottom, screen)
 score = Score(None, score_pos, 0, bottom, score_font_size)
-objs = [enemy_fact, boi, bottom, score]
+objs = [entity_fact, boi, bottom, score]
 
 
 def message_to_screen(msg, color):
-    objs.append(Text(None, text_pos, 0, "collision", 50))
+    objs.append(Text(None, text_pos, 0, msg, 50))
 
 
 def game_loop():
@@ -46,8 +46,8 @@ def game_loop():
             screen.blit(obj.img, obj.pos)
         pygame.display.update()
 
-        for enemy in enemy_fact.enemies:
-            if enemy.rect.collidepoint(boi.rect.center):
+        for entity in entity_fact.entities:
+            if entity.rect.collidepoint(boi.rect.center):
                 message_to_screen("COLLISION", (255, 128, 0))
 
         for event in pygame.event.get():
