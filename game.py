@@ -5,11 +5,14 @@ from Score import Score
 from GC import *
 from EntityFactory import EntityFactory
 from Text import Text
+from random import randint
 from background import BackGround
 
 
 pygame.init()
+pygame.mixer.init()
 screen = pygame.display.set_mode((display_width,display_height))
+
 
 bottom = Ground(ground_path, (0, ground_y), ground_start_speed)
 #sky = BackGround(pygame.image.load("mountains2.png"), pygame.image.load("sky.jpg"))
@@ -22,6 +25,9 @@ objs = [entity_fact, boi, bottom, score]
 def message_to_screen(msg, color):
     objs.append(Text(None, text_pos, 0, msg, 50))
 
+def new_track():
+    pygame.mixer.music.load(music[randint(0,4)])
+    pygame.mixer.music.play()
 
 def game_loop():
 
@@ -54,6 +60,8 @@ def game_loop():
             if event.type == pygame.QUIT:
                 running = False
 
+        if not pygame.mixer.music.get_busy():
+            new_track()
 
 if __name__ == "__main__":
     game_loop()

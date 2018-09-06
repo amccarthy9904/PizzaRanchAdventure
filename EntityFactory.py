@@ -18,7 +18,8 @@ class EntityFactory(GameObject):
         choice = random.randint(1, 100)
         if choice <= 3:
             self.entities.append(Powerup(p_up_path, (e1_init_x, e_PU_init_y), self.ground.speed))
-        elif choice <= 70:
+            return
+        elif choice <= 10:
             self.entities.append(Enemy(enemy_RS_path, (e2_init_x, e_RS_init_y), self.ground.speed))
         self.entities.append(Enemy(enemy_RS_path, (e1_init_x, e_RS_init_y), self.ground.speed))
 
