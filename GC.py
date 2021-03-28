@@ -35,5 +35,10 @@ player_path = "assets/ranchGuy_small.png"
 enemy_RS_path = "assets/ramadanSteve_small.png"
 ef_path = "assets/ef.png"
 p_up_path = "assets/health_sm.png"
-music = { 0: "assets/ChiquitaBananaObama.mp3", 1: "assets/EricAndreMM.mp3",
-          2: "assets/HotChicken.mp3", 3:"assets/LTown.mp3", 4: "assets/WellBeRightBack.mp3"}
+music = { 0: "assets/ChiquitaBananaObama.wav", 1: "assets/EricAndreMM.wav",
+          2: "assets/HotChicken.wav", 3:"assets/LTown.wav", 4: "assets/WellBeRightBack.wav"}
+BG_sky_path = "assets/sky.jpg"
+BG_mtn_path = "assets/mountains2.png"
+
+
+
