@@ -15,7 +15,7 @@ screen = pygame.display.set_mode((display_width,display_height))
 
 
 bottom = Ground(ground_path, (0, ground_y), ground_start_speed)
-#sky = BackGround(pygame.image.load("mountains2.png"), pygame.image.load("sky.jpg"))
+sky = BackGround(pygame.image.load(BG_sky_path))
 boi = BOI(player_path, (0,boi_start_y), boi_start_speed)
 entity_fact = EntityFactory(ef_path, fact_init_pos, None, bottom, screen)
 score = Score(None, score_pos, 0, bottom, score_font_size)
@@ -46,7 +46,7 @@ def game_loop():
         if keys[pygame.K_d]:
             boi.move_right()
 
-        #sky.update(screen)
+        sky.update(screen)
         for obj in objs:
             obj.update()
             screen.blit(obj.img, obj.pos)
