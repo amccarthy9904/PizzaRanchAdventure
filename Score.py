@@ -12,7 +12,7 @@ class Score(Message):
 
     def update(self):
         self.points -= self.ground.speed * .1
-        self.img = self.font.render(str(int(self.points)).encode("utf-8"), True, (0, 128, 0))
+        self.img = self.font.render(str(int(self.points)).encode("utf-8"), True, (0, 5, 0))
 
 
 
